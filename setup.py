@@ -15,6 +15,10 @@ from setuptools import find_packages, setup
 readme = open("README.rst").read()
 history = open("CHANGES.rst").read()
 
+dependency_links = [
+    "git://github.com/caltech/datacite@rest-api#egg=datacite",
+]
+
 tests_require = [
     "pytest-invenio>=1.4.0",
     "SQLAlchemy-Utils>=0.33.1,<0.36",
@@ -43,6 +47,7 @@ install_requires = [
     "Flask-BabelEx>=0.9.4",
     "elasticsearch_dsl>=7.2.1",
     "sqlalchemy-continuum>=1.3.11",
+    "datacite",
 ]
 
 packages = find_packages()
@@ -79,6 +84,7 @@ setup(
             "invenio_config_tugraz = invenio_config_tugraz.config",
         ],
     },
+    dependency_links=dependency_links,
     extras_require=extras_require,
     install_requires=install_requires,
     setup_requires=setup_requires,
